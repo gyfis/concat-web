@@ -1,0 +1,12 @@
+{
+  "name": "Concat Web wrapper",
+  "description": "A simple web wrapper around the concat commandline app using Flask and Celery",
+  "repository": "https://github.com/gyfis/concat-web",
+  "keywords": ["flask", "celery", "twitch"],
+  "addons": ["heroku-redis"],
+  "formation": {"web": {"quantity": 1}, "worker": {"quantity": 1}},
+  "env": {
+    "LD_LIBRARY_PATH": "/app/.heroku/ffmpeg/lib",
+    "PATH": "/app/.heroku/ffmpeg/bin:/app/.heroku/concat/bin:/usr/local/bin:/usr/bin:/bin"
+  }
+}

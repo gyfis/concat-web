@@ -12,20 +12,23 @@ Used for calling the -qualityinfo on the vod, currently returns ugly list of qua
 
 ### `/<vod_id>`
 Main endpoint, use for downloading and querying about download
+
 Required query parameters
 - `start`, `end` - in the `00-00-00` format (`hh-mm-ss`), e.g. `start=5-3-20&end=6-2-0`
+
 Optional query parameters
 - `quality` - use for specifying quality, e.g. ``&quality=360p30`
 - `delete` - use for deleting existing .mp4 file, e.g. `&delete=true` - *WARNING you want to call the endpoint with this param only once to not remove the new downloaded file*
 
 Example call (not guaranteed this app will be up and vod to exist)
+
 First call (to invoke the downloading)
 
-https://fathomless-castle-57163.herokuapp.com/239817129?start=0-0-0&end=0-3-0&quality=360p30&delete=true
+- https://fathomless-castle-57163.herokuapp.com/239817129?start=0-0-0&end=0-3-0&quality=360p30&delete=true
 
 Subsequent calls (to check status)
 
-https://fathomless-castle-57163.herokuapp.com/239817129?start=0-0-0&end=0-3-0&quality=360p30
+- https://fathomless-castle-57163.herokuapp.com/239817129?start=0-0-0&end=0-3-0&quality=360p30
 
 When the download is started, the web will list number of downloaded chunks.
 After the download is ready, the web will list a download button, which can be either downloaded or viewed in browser.
